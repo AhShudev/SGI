@@ -1,12 +1,4 @@
-# SGI 2024/2025 - TP2
-
-## Group: T02G05
-
-| Name             | Number    | E-Mail             |
-| ---------------- | --------- | ------------------ |
-| Elton Tamele     | 201908676 | up201908676@up.pt  |
-| Maureen Ah-shú   | 201708043 | up201708043@up.pt  |
-
+# SGI - TP2
 ----
 
 ## Project information
@@ -34,4 +26,11 @@ This project demonstrates a custom implementation in Three.js, focusing on dynam
 
 - Problems:
   - Inconsistent mipmap handling.
+ 
+----
+
+This project was created for Interative Graphics Systems - FEUP by:
+
+- Elton Tamele
+- Maureen Ah-shú
 
