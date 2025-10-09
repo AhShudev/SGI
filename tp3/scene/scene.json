@@ -1,0 +1,495 @@
+{
+    "yasf": {
+        "globals": {
+            "background": { "r": 0.2, "g": 0.2, "b": 0.2 },
+            "ambient": { "r": 0.5, "g": 0.5, "b": 0.5, "intensity": 0.5 },
+            "fog": {
+                "color": { "r": 0.3, "g": 0.3, "b": 0.3 },
+                "near": 10.0, "far": 2000.0 
+            },
+            "skybox": {
+                "size": { "x": 1000, "y": 1000, "z": 1000 },
+                "center": { "x": 0, "y": 0, "z": 0 },
+                "emissive": { "r": 0.3, "g": 0.3, "b": 0.3 },
+                "intensity": 1.0,
+                "front": "scene/skybox/front.jpg",
+                "back": "scene/skybox/back.jpg",
+                "up": "scene/skybox/top.jpg",
+                "down": "scene/skybox/bottom.jpg",
+                "left": "scene/skybox/left.jpg",
+                "right": "scene/skybox/right.jpg"
+            }
+        },
+        "cameras": {
+            "initial": "perspective",
+            "perspective": {
+                "type": "perspective",
+                "angle": 75,
+                "near": 0.1,
+                "far": 2500,
+                "location": { "x": 0.0, "y": 150, "z": 0.0 },
+                "target": { "x": 0, "y": 0, "z": 0 }
+            },
+            "firstPerson": {
+                "type": "perspective",
+                "angle": 90,
+                "near": 0.1,
+                "far": 1500,
+                "location": { "x": -150.0, "y": 0.0, "z": -150.0 },
+                "target": { "x": 0, "y": 0, "z": 0 }
+            }
+        },
+        "textures": {
+            "obstacletex": { "filepath": "scene/textures/obstacle.jpg" },
+            "balloon1tex": { "filepath": "scene/textures/balloon1.jpg" },
+            "balloon2tex": { "filepath": "scene/textures/balloon2.png" },
+            "balloon3tex": { "filepath": "scene/textures/balloon3.jpg" },
+            "balloon4tex": { "filepath": "scene/textures/balloon4.jpg" },
+            "balloon5tex": { "filepath": "scene/textures/balloon5.jpg" },
+            "balloon6tex": { "filepath": "scene/textures/balloon6.jpg" },
+            "baskettex": { "filepath": "scene/textures/basket.jpg" },
+            "ropetex": { "filepath": "scene/textures/rope.png" },
+            "flametex": { "filepath": "scene/textures/flame.png" }
+        },
+        "materials": {
+            "basicmaterial": {
+                "color": { "r": 0.8, "g": 0.8, "b": 0.8 },
+                "emissive": { "r": 0.0, "g": 0.0, "b": 0.0 },
+                "specular": { "r": 0.1, "g": 0.1, "b": 0.1 },
+                "shininess": 30,
+                "transparent": false,
+                "opacity": 1.0
+            },
+            "powermaterial": {
+                "color": { "r": 0.0, "g": 1.0, "b": 0.0 }, 
+                "emissive": { "r": 0.1, "g": 0.5, "b": 0.1 },  
+                "specular": { "r": 0.2, "g": 0.8, "b": 0.2 }, 
+                "shininess": 60, 
+                "transparent": false,
+                "opacity": 1.0
+            },
+            "obstaclematerial": {
+                "color": { "r": 0.8, "g": 0.8, "b": 0.8 }, 
+                "emissive": { "r": 0.0, "g": 0.0, "b": 0.0 },  
+                "specular": { "r": 0.8, "g": 0.8, "b": 0.2 }, 
+                "shininess": 60, 
+                "transparent": false,
+                "opacity": 1.0,
+                "textureref": "obstacletex"
+            },
+            "balloon1material": {
+                "color": { "r": 0.8, "g": 0.8, "b": 0.8 },
+                "emissive": { "r": 0.0, "g": 0.0, "b": 0.0 },
+                "specular": { "r": 0.1, "g": 0.1, "b": 0.1 },
+                "shininess": 30,
+                "transparent": false,
+                "opacity": 1.0,
+                "textureref": "balloon1tex"
+            },
+            "balloon2material": {
+                "color": { "r": 0.8, "g": 0.8, "b": 0.8 },
+                "emissive": { "r": 0.0, "g": 0.0, "b": 0.0 },
+                "specular": { "r": 0.1, "g": 0.1, "b": 0.1 },
+                "shininess": 30,
+                "transparent": false,
+                "opacity": 1.0,
+                "textureref": "balloon2tex"
+            },
+            "balloon3material": {
+                "color": { "r": 0.8, "g": 0.8, "b": 0.8 },
+                "emissive": { "r": 0.0, "g": 0.0, "b": 0.0 },
+                "specular": { "r": 0.1, "g": 0.1, "b": 0.1 },
+                "shininess": 30,
+                "transparent": false,
+                "opacity": 1.0,
+                "textureref": "balloon3tex"
+            },
+            "balloon4material": {
+                "color": { "r": 0.8, "g": 0.8, "b": 0.8 },
+                "emissive": { "r": 0.0, "g": 0.0, "b": 0.0 },
+                "specular": { "r": 0.1, "g": 0.1, "b": 0.1 },
+                "shininess": 30,
+                "transparent": false,
+                "opacity": 1.0,
+                "textureref": "balloon4tex"
+            },
+            "balloon5material": {
+                "color": { "r": 0.8, "g": 0.8, "b": 0.8 },
+                "emissive": { "r": 0.0, "g": 0.0, "b": 0.0 },
+                "specular": { "r": 0.1, "g": 0.1, "b": 0.1 },
+                "shininess": 30,
+                "transparent": false,
+                "opacity": 1.0,
+                "textureref": "balloon5tex"
+            },
+            "balloon6material": {
+                "color": { "r": 0.8, "g": 0.8, "b": 0.8 },
+                "emissive": { "r": 0.0, "g": 0.0, "b": 0.0 },
+                "specular": { "r": 0.1, "g": 0.1, "b": 0.1 },
+                "shininess": 30,
+                "transparent": false,
+                "opacity": 1.0,
+                "textureref": "balloon6tex"
+            },
+            "basketmaterial": {
+                "color": { "r": 0.8, "g": 0.8, "b": 0.8 },
+                "emissive": { "r": 0.0, "g": 0.0, "b": 0.0 },
+                "specular": { "r": 0.1, "g": 0.1, "b": 0.1 },
+                "shininess": 30,
+                "transparent": false,
+                "opacity": 1.0,
+                "textureref": "baskettex"
+            },
+            "ropematerial": {
+                "color": { "r": 0.8, "g": 0.8, "b": 0.8 },
+                "emissive": { "r": 0.0, "g": 0.0, "b": 0.0 },
+                "specular": { "r": 0.1, "g": 0.1, "b": 0.1 },
+                "shininess": 30,
+                "transparent": false,
+                "opacity": 1.0,
+                "textureref": "ropetex"
+            },
+            "flamematerial": {
+                "color": { "r": 0.8, "g": 0.8, "b": 0.8 },
+                "emissive": { "r": 0.0, "g": 0.0, "b": 0.0 },
+                "specular": { "r": 0.1, "g": 0.1, "b": 0.1 },
+                "shininess": 30,
+                "transparent": false,
+                "opacity": 1.0,
+                "textureref": "flametex"
+            }
+        },
+        "graph": {
+            "rootid": "scene",
+            "scene": {
+                "type": "node",
+                "children": {
+                   "balloons": {
+                        "type": "noderef",
+                        "nodeId": "balloons"
+                    },
+                    "powerups": {
+                        "type": "noderef",
+                        "nodeId": "powerups"
+                    },
+                    "obstacles": {
+                        "type": "noderef",
+                        "nodeId": "obstacles"
+                    }
+                }
+            },
+            "balloons": {
+                "type": "node",
+                "children": {
+                    "balloon1": {
+                        "type": "noderef",
+                        "materialref": { "materialId": "balloon1material" },
+                        "nodeId": "balloon"
+                    },
+                    "balloon2": {
+                        "type": "noderef",
+                        "materialref": { "materialId": "balloon2material" },
+                        "nodeId": "balloon"
+                    },
+                    "balloon3": {
+                        "type": "noderef",
+                        "materialref": { "materialId": "balloon3material" },
+                        "nodeId": "balloon"
+                    },
+                    "balloon4": {
+                        "type": "noderef",
+                        "materialref": { "materialId": "balloon4material" },
+                        "nodeId": "balloon"
+                    },
+                    "balloon5": {
+                        "type": "noderef",
+                        "materialref": { "materialId": "balloon5material" },
+                        "nodeId": "balloon"
+                    },
+                    "balloon6": {
+                        "type": "noderef",
+                        "materialref": { "materialId": "balloon6material" },
+                        "nodeId": "balloon"
+                    }
+                }
+            },
+            "balloon": {
+                "type": "node",
+                "children": {
+                    "balloonballoon": {
+                        "type": "noderef",
+                        "nodeId": "balloonballoon"
+                    },
+                    "balloonburner": {
+                        "type": "noderef",
+                        "nodeId": "balloonburner"
+                    },
+                    "balloonbasket": {
+                        "type": "noderef",
+                        "nodeId": "balloonbasket"
+                    },
+                    "balloonropes": {
+                        "type": "noderef",
+                        "nodeId": "balloonropes"
+                    }
+                }
+            },
+            "balloonballoon": {
+                "type": "node",
+                "materialref": { "materialId": "basicmaterial" },
+                "children": {
+                    "balloontop": {
+                        "type": "noderef",
+                        "nodeId": "balloontop"
+                    },
+                    "balloonbottom": {
+                        "type": "noderef",
+                        "nodeId": "balloonbottom"
+                    }
+                }
+            },
+            "balloontop": {
+                "type": "node",
+                "children": {
+                    "spherePrim": {
+                        "type": "sphere",
+                        "radius": 8,
+                        "slices": 32,
+                        "stacks": 32,
+                        "castshadows": true,     
+                        "receiveshadows": true
+                    }
+                }
+            },
+            "balloonbottom": {
+                "type": "node",
+                "transforms": [ {"type": "translate", "amount": { "x": 0.0, "y": -7.5, "z": 0.0}} ],
+                "children": {
+                    "cylinderPrim": {
+                        "type": "cylinder",
+                        "base": 6.0,
+                        "top": 1.5,
+                        "height": 5.0,
+                        "slices": 32,
+                        "castshadows": true,     
+                        "receiveshadows": true
+                    }
+                }
+            },
+            "balloonburner": {
+                "type": "node",
+                "materialref": { "materialId": "flamematerial" },
+                "transforms": [ {"type": "translate", "amount": { "x": 0.0, "y": -12.0, "z": 0.0}} ],
+                "children": {
+                    "cylinderPrim": {
+                        "type": "cylinder",
+                        "base": 0.35,
+                        "top": 0.8,
+                        "height": 1.0,
+                        "slices": 16,
+                        "castshadows": true,     
+                        "receiveshadows": true
+                    }
+                }
+            },
+            "balloonbasket": {
+                "type": "node",
+                "materialref": { "materialId": "basketmaterial" },
+                "transforms": [ {"type": "translate", "amount": { "x": 0.0, "y": -15.0, "z": 0.0}} ],
+                "children": {
+                    "boxPrim": {
+                        "type": "box",
+                        "xyz1": { "x": -2, "y": -1.0, "z": -2 },
+                        "xyz2": { "x": 2, "y": 1.0, "z": 2 },
+                        "castshadows": true,     
+                        "receiveshadows": true
+                    }
+                }
+            },
+            "balloonropes": {
+                "type": "node",
+                "children": {
+                    "rope1": {
+                        "type": "noderef",
+                        "nodeId": "rope",
+                        "transforms": [
+                            {"type": "rotate", "amount": { "x": 25, "y": 0, "z": 0}},
+                            {"type": "translate", "amount": { "x": 0.0, "y": -10.9, "z": 0.75}},
+                            {"type": "scale", "amount": { "x": 1.0, "y": 2.0, "z": 1.0 } } 
+                        ]
+                    },
+                    "rope2": {
+                        "type": "noderef",
+                        "nodeId": "rope",
+                        "transforms": [
+                            {"type": "rotate", "amount": { "x": -25, "y": 0, "z": 0}},
+                            {"type": "translate", "amount": { "x": 0.0, "y": -10.9, "z": -0.75}},
+                            {"type": "scale", "amount": { "x": 1.0, "y": 2.0, "z": 1.0 } } 
+                        ]
+                    },
+                    "rope3": {
+                        "type": "noderef",
+                        "nodeId": "rope",
+                        "transforms": [
+                            {"type": "rotate", "amount": { "x": -10, "y": 0, "z": -10}},
+                            {"type": "translate", "amount": { "x": -1.5, "y": -12.35, "z": 1.0}},
+                            {"type": "scale", "amount": { "x": 1.0, "y": 5.0, "z": 1.0 } } 
+                        ]
+                    },
+                    "rope4": {
+                        "type": "noderef",
+                        "nodeId": "rope",
+                        "transforms": [
+                            {"type": "rotate", "amount": { "x": 10, "y": 0, "z": -10}},
+                            {"type": "translate", "amount": { "x": -1.5, "y": -12.35, "z": -1.0}},
+                            {"type": "scale", "amount": { "x": 1.0, "y": 5.0, "z": 1.0 } } 
+                        ]
+                    },
+                    "rope5": {
+                        "type": "noderef",
+                        "nodeId": "rope",
+                        "transforms": [
+                            {"type": "rotate", "amount": { "x": -10, "y": 0, "z": 10}},
+                            {"type": "translate", "amount": { "x": 1.5, "y": -12.35, "z": 1.0}},
+                            {"type": "scale", "amount": { "x": 1.0, "y": 5.0, "z": 1.0 } } 
+                        ]
+                    },
+                    "rope6": {
+                        "type": "noderef",
+                        "nodeId": "rope",
+                        "transforms": [
+                            {"type": "rotate", "amount": { "x": 10, "y": 0, "z": 10}},
+                            {"type": "translate", "amount": { "x": 1.5, "y": -12.35, "z": -1.0}},
+                            {"type": "scale", "amount": { "x": 1.0, "y": 5.0, "z": 1.0 } } 
+                        ]
+                    }
+                }
+            },
+            "rope": {
+                "type": "node",
+                "materialref": { "materialId": "ropematerial" },
+                "children": {
+                    "cylinderPrim": {
+                        "type": "cylinder",
+                        "base": 0.05,
+                        "top": 0.05,
+                        "height": 1.0,
+                        "slices": 16,
+                        "castshadows": true,     
+                        "receiveshadows": true
+                    }
+                }
+            },
+            "powerups": {
+                "type": "node",
+                "children": {
+                    "powerup1": {
+                        "type": "noderef",
+                        "nodeId": "powerup"
+                    },
+                    "powerup2": {
+                        "type": "noderef",
+                        "nodeId": "powerup"
+                    },
+                    "powerup3": {
+                        "type": "noderef",
+                        "nodeId": "powerup"
+                    }
+                }
+            },
+            "powerup": {
+                "type": "node",
+                "materialref": { "materialId": "powermaterial" },
+                "transforms": [ {"type": "scale", "amount": { "x": 2.0, "y": 3.0, "z": 2.0 } }  ],
+                "children": {
+                    "power1": {
+                        "type": "noderef",
+                        "nodeId": "power",
+                        "transforms": [ {"type": "translate", "amount": { "x": 0.0, "y": 0.0, "z": 0.0}} ]
+                    },
+                    "power2": {
+                        "type": "noderef",
+                        "nodeId": "power",
+                        "transforms": [ {"type": "translate", "amount": { "x": 0.0, "y": -2.0, "z": 0.0}} ]
+                    }
+                }
+            },
+            "power": {
+                "type": "node",
+                "children": {
+                    "powerupleft": {
+                        "type": "noderef",
+                        "nodeId": "powerupleft"
+                    },
+                    "powerupright": {
+                        "type": "noderef",
+                        "nodeId": "powerupright"
+                    }
+                }
+            },
+            "powerupleft": {
+                "type": "node",
+                "transforms": [ {"type": "translate", "amount": { "x": -0.815, "y": 0.0, "z": 0.0}},
+                                {"type": "rotate", "amount": {"x": 0, "y": 0, "z": -45}} ],
+                "children": {
+                    "boxPrim": {
+                        "type": "box",
+                        "xyz1": { "x": -0.35, "y": -1.5, "z": -0.15 },
+                        "xyz2": { "x": 0.35, "y": 1.5, "z": 0.15 },
+                        "castshadows": true,     
+                        "receiveshadows": true
+                    }
+                }
+            },
+            "powerupright": {
+                "type": "node",
+                "transforms": [ {"type": "translate", "amount": { "x": 0.815, "y": 0.0, "z": 0.0}},
+                                {"type": "rotate", "amount": {"x": 0, "y": 0, "z": 45}} ],
+                "children": {
+                    "boxPrim": {
+                        "type": "box",
+                        "xyz1": { "x": -0.35, "y": -1.5, "z": -0.15 },
+                        "xyz2": { "x": 0.35, "y": 1.5, "z": 0.15 },
+                        "castshadows": true,     
+                        "receiveshadows": true
+                    }
+                }
+            },
+            "obstacles": {
+                "type": "node",
+                "children": {
+                    "obstacle1": {
+                        "type": "noderef",
+                        "nodeId": "obstacle"
+                    },
+                    "obstacle2": {
+                        "type": "noderef",
+                        "nodeId": "obstacle"
+                    },
+                    "obstacle3": {
+                        "type": "noderef",
+                        "nodeId": "obstacle"
+                    },
+                    "obstacle4": {
+                        "type": "noderef",
+                        "nodeId": "obstacle"
+                    }
+                }
+            },
+            "obstacle": {
+                "type": "node",
+                "materialref": { "materialId": "obstaclematerial" },
+                "children": {
+                    "spherePrim": {
+                        "type": "sphere",
+                        "radius": 8,
+                        "slices": 32,
+                        "stacks": 32,
+                        "castshadows": true,     
+                        "receiveshadows": true
+                    }
+                }
+            }
+        }
+    }
+}
