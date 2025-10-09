@@ -1,12 +1,4 @@
-# SGI 2024/2025 - TP3
-
-## Group: T02G05
-
-| Name             | Number    | E-Mail             |
-| ---------------- | --------- | ------------------ |
-| Elton Tamele     | 201908676 | up201908676@up.pt  |
-| Maureen Ah-shú   | 201708043 | up201708043@up.pt  |
-
+# SGI - TP3
 ----
 ## Project information
 This project is a 3D simulation environment developed using Three.js. It is an Hot Air Balloon Race game implementation with intuitive balloon control system that responds to different wind layers.
@@ -19,3 +11,10 @@ This project is a 3D simulation environment developed using Three.js. It is an H
 ## Issues/Problems
 
 - One of the biggest challenges was ensuring the game is intuitive and accessible while maintaining the complexity of controlling a hot air balloon in different wind layers.
+
+----
+
+This project was created for Interative Graphics Systems - FEUP by:
+
+- Elton Tamele
+- Maureen Ah-shú
