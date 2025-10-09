@@ -1,11 +1,4 @@
-# SGI 2024/2025 - TP1
-
-## Group: T02G05
-
-| Name             | Number    | E-Mail             |
-| ---------------- | --------- | ------------------ |
-| Elton Tamele     | 201908676 | up201908676@up.pt  |
-| Maureen Ah-shú   | 201708043 | up201708043@up.pt  |
+# SGI  - TP1
 
 ----
 ## Project information
@@ -42,3 +35,10 @@
 - Curved Surfaces: Curved surfaces, such as the newspaper and the jar, were challenging to create at first, though resolved with effort and persistence.
 - Implemented Features: All intended features were successfully implemented.
 - Known Bugs: There are no known bugs or problems at this time.
+
+----
+
+This project was created for Interative Graphics Systems - FEUP by:
+
+- Elton Tamele
+- Maureen Ah-shú
